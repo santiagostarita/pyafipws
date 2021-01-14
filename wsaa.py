@@ -31,7 +31,7 @@ try:
 except ImportError:
     ex = exception_info()
     warnings.warn("No es posible importar M2Crypto (OpenSSL)")
-    warnings.warn(ex['msg'])            # revisar instalación y DLLs de OpenSSL
+    warnings.warn(str(ex))            # revisar instalación y DLLs de OpenSSL
     BIO = Rand = SMIME = SSL = None
     # utilizar alternativa (ejecutar proceso por separado) 
     from subprocess import Popen, PIPE

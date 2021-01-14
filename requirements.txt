@@ -8,3 +8,5 @@ Pillow>=2.0.0
 tabulate==0.8.5
 certifi>=2020.4.5.1
 qrcode==6.1
+
+pip install https://ci.appveyor.com/api/buildjobs/jw1kqpwsbur77mxi/artifacts/dist/M2Crypto-0.35.2-cp38-cp38-win_amd64.whl

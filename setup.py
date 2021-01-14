@@ -115,9 +115,9 @@ if 'py2exe' in sys.argv:
             )
     else:
         WX_DLL = (".", [
-            "C:\python25\Lib\site-packages\wx-2.8-msw-unicode\wx\MSVCP71.dll",
-            "C:\python25\MSVCR71.dll",
-            "C:\python25\lib\site-packages\wx-2.8-msw-unicode\wx\gdiplus.dll",
+            "C:\python27\Lib\site-packages\wx-2.8-msw-unicode\wx\MSVCP71.dll",
+            "C:\python27\MSVCR71.dll",
+            "C:\python27\lib\site-packages\wx-2.8-msw-unicode\wx\gdiplus.dll",
             ])
 
     # includes for py2exe
