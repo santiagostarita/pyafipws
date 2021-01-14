@@ -45,7 +45,7 @@ if 'py2exe' in sys.argv:
     #import wsfecred
     #import ws_sr_padron
     import pyfepdf
-    #import pyemail
+    import pyemail
     #import pyi25
     import pyqr
     #import ws_sire
@@ -60,7 +60,7 @@ if 'py2exe' in sys.argv:
     #import wscoc
     #import wscdc
     #import cot
-    #import iibb
+    import iibb
     #import trazamed
     #import trazaprodmed
     #import trazarenpre

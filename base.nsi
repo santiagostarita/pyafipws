@@ -24,8 +24,8 @@ LicenseForceSelection checkbox
 ; use the default string for the directory page.
 DirText ""
 
-Name "PyAfipWs version 2.7.2269-32bit+wsaa_2.11c+wsfev1_1.25b+pyfepdf_1.10a+pyqr_1.03b-full"
-OutFile "PyAfipWs-2.7.2269-32bit+wsaa_2.11c+wsfev1_1.25b+pyfepdf_1.10a+pyqr_1.03b-full.exe"
+Name "PyAfipWs version 2.7.2271-32bit+wsaa_2.11c+wsfev1_1.25b+pyfepdf_1.10a+pyemail_1.06f+pyqr_1.03b+iibb_1.01b-full"
+OutFile "PyAfipWs-2.7.2271-32bit+wsaa_2.11c+wsfev1_1.25b+pyfepdf_1.10a+pyemail_1.06f+pyqr_1.03b+iibb_1.01b-full.exe"
 ;SetCompress off ; disable compression (testing)
 SetCompressor /SOLID lzma
 ;InstallDir PyAfipWs
@@ -33,11 +33,11 @@ InstallDir $PROGRAMFILES\PyAfipWs
 
 InstallDirRegKey HKLM "Software\PyAfipWs" "Install_Dir"
 
-VIProductVersion "2.7.2269.1"
+VIProductVersion "2.7.2271.1"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductName" "PyAfipWs"
-VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "PyAfipWs version 2.7.2269-32bit+wsaa_2.11c+wsfev1_1.25b+pyfepdf_1.10a+pyqr_1.03b-full"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "PyAfipWs version 2.7.2271-32bit+wsaa_2.11c+wsfev1_1.25b+pyfepdf_1.10a+pyemail_1.06f+pyqr_1.03b+iibb_1.01b-full"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "CompanyName" "http://www.sistemasagiles.com.ar"
-VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "2.7.2269.1"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "2.7.2271.1"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalCopyright" "Mariano Reingart"
 ;VIAddVersionKey /LANG=${LANG_ENGLISH} "InternalName" "FileSetup.exe"
 
@@ -56,7 +56,7 @@ Section PyAfipWs
         CopyFiles $INSTDIR\\conf\\reingart.key $INSTDIR\\reingart.key
     WriteRegStr HKLM SOFTWARE\PyAfipWs "Install_Dir" "$INSTDIR"
     ; Write the uninstall keys for Windows
-    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\PyAfipWs" "DisplayName" "PyAfipWs version 2.7.2269-32bit+wsaa_2.11c+wsfev1_1.25b+pyfepdf_1.10a+pyqr_1.03b-full (solo eliminar)"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\PyAfipWs" "DisplayName" "PyAfipWs version 2.7.2271-32bit+wsaa_2.11c+wsfev1_1.25b+pyfepdf_1.10a+pyemail_1.06f+pyqr_1.03b+iibb_1.01b-full (solo eliminar)"
     WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\PyAfipWs" "UninstallString" "$INSTDIR\Uninst.exe"
     WriteUninstaller "Uninst.exe"
     
@@ -75,11 +75,14 @@ Section PyAfipWs
         RegDLL "$INSTDIR\wsaa.dll"
     RegDLL "$INSTDIR\wsfev1.dll"
     RegDLL "$INSTDIR\pyfepdf.dll"
+    RegDLL "$INSTDIR\pyemail.dll"
     RegDLL "$INSTDIR\pyqr.dll"
+    RegDLL "$INSTDIR\iibb.dll"
 
         ExecWait 'wsaa.exe /register' 
     ExecWait 'wsfev1.exe /register' 
     ExecWait 'pyfepdf.exe /register' 
+    ExecWait 'iibb.exe /register' 
 
     
     ;create start-menu items
@@ -99,7 +102,9 @@ Section "Uninstall"
         UnRegDLL "$INSTDIR\wsaa.dll"
     UnRegDLL "$INSTDIR\wsfev1.dll"
     UnRegDLL "$INSTDIR\pyfepdf.dll"
+    UnRegDLL "$INSTDIR\pyemail.dll"
     UnRegDLL "$INSTDIR\pyqr.dll"
+    UnRegDLL "$INSTDIR\iibb.dll"
 
     
     ;Delete Files

@@ -44,7 +44,7 @@ except ImportError:
 # pip install wheel
 # pip install M2CryptoWin32 -> este es el posta
 # pip install setuptools
-# pip install py2exe
+# pip install py2exe_py2
 
 # pip install M2Crypto  -> este no iba
 
