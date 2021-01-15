@@ -193,7 +193,7 @@ def inicializar_y_capturar_excepciones(func):
 
 
 def inicializar_y_capturar_excepciones_simple(func):
-    "Decorador para inicializar y capturar errores (versión básica indep.)"
+    "Decorador para inicializar y capturar errores (versionn basica indep.)"
     @functools.wraps(func)
     def capturar_errores_wrapper(self, *args, **kwargs):
         self.inicializar()
